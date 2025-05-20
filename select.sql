@@ -1,4 +1,4 @@
--- Active: 1747563587031@@127.0.0.1@5432@ph
+-- Active: 1747563587031@@127.0.0.1@5433@test_db
 
 CREATE TABLE students (
     student_id SERIAL PRIMARY KEY,
@@ -34,9 +34,20 @@ VAlUES
 ('Emma', 'Gonzalez', 26, 'A', 'Physics', NULL, '1999-09-30', 'B+', 'Australia'),
 ('Liam', 'Wright', 19, 'C', 'Math', 'liam.wright@example.com', '2002-06-14', 'A+', 'New Zealand');
 
+Select * FROM students;
+
 SELECT email FROM students;
 
+
+SELECT email FROM students
+     WHERE email != 'NULL';
+
+SELECT email FROM students
+     WHERE email IS NOT NULL;
+
 SELECT * FROM students ORDER BY age ASC;
+
+SELECT * FROM students ORDER BY age DESC;
 
 SELECT DISTINCT country FROM students;
 
@@ -50,8 +61,6 @@ SELECT * FROM students
 
 SELECT * FROM students 
     WHERE age <> 19;
-
-
 
 -- @Scalar functions
 -- UPPER() Converts a string to uppercase.
@@ -67,7 +76,7 @@ SELECT * FROM students
 -- SUM() Calculates the sum of values in a set.
 -- COUNT() Counts the number of rows in a set.
 
-SELECT UPPER (first_name), * FROM students;
+SELECT UPPER(first_name), * FROM students;
 
 SELECT UPPER(first_name) as first_name_upper, * FROM students;
 
@@ -75,7 +84,13 @@ SELECT concat(first_name, ' ', last_name) as full_name FROM students;
 
 SELECT COUNT(*) FROM students;
 
+SELECT AVG(age) FROM students;
 
 SELECT MAX(length(first_name)) FROM students;
+
+SELECT length(first_name) FROM students;
+
+SELECT email as user_email, student_id as id, * FROM students 
+    WHERE email = 'bob.williams@example.com';
 
 TRUNCATE TABLE students;
