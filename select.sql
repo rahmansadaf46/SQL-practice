@@ -36,6 +36,8 @@ VAlUES
     ('Emma', 'Gonzalez', 24, 'A', 'Physics', NULL, '1999-09-30', 'B+', 'Australia'),
     ('Miam', 'Wright', 19, 'C', 'Math', 'liam.wright@example.com', '2002-06-14', 'A+', 'New Zealand');
 
+DROP table students;
+
 Select * FROM students;
 
 SELECT email FROM students;

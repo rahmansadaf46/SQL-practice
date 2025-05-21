@@ -19,3 +19,37 @@ SELECT now()::date;
 SELECT now()::time;
 
 SELECT to_char(now(), 'DD/MM/YYYY');
+
+SELECT to_char(now(), 'MONTH');
+
+SELECT to_char(now(), 'Month');
+
+
+SELECT CURRENT_DATE - INTERVAL '1 month';
+
+SELECT CURRENT_DATE - INTERVAL '2 year 1 month';
+
+SELECT age(CURRENT_DATE, '2000-01-01');
+
+SELECT * FROM students;
+
+SELECT *,age(CURRENT_DATE, dob) as age_details FROM students;
+
+SELECT extract(year from '2020-01-01'::date);
+
+SELECT extract(month from '2020-01-01'::date);
+
+SELECT 1::BOOLEAN;
+SELECT 0::BOOLEAN;
+
+SELECT 'true'::BOOLEAN;
+SELECT 'false'::BOOLEAN;
+
+
+SELECT 'y'::BOOLEAN;
+SELECT 'n'::BOOLEAN;
+
+SELECT '1'::BOOLEAN;
+SELECT '0'::BOOLEAN;
+
+

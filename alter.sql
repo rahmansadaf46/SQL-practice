@@ -1,4 +1,4 @@
--- Active: 1747563587031@@127.0.0.1@5433@test_db
+-- Active: 1747563587031@@127.0.0.1@5432@ph
 SELECT * FROM person2; 
 
 ALTER TABLE person2
